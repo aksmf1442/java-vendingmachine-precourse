@@ -3,6 +3,7 @@ package vendingmachine.view;
 public class InputViewValidator {
 
     private static int MIN_DIVISION_NUMBER = 10;
+    private static int MIN_PRICE = 100;
 
     public static void validateNumber(String number) {
         String expression = "^[0-9]+$";
@@ -21,5 +22,9 @@ public class InputViewValidator {
         if (item.length != 3) {
             throw new IllegalArgumentException("[ERROR] 상품명, 가격, 수량 모두를 입력해줘야합니다.");
         }
+    }
+
+    public static void validatePriceRange(String price) {
+
     }
 }

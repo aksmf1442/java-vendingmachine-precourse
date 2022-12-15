@@ -43,5 +43,6 @@ public class InputView {
         String price = item[1];
         String amount = item[2];
         InputViewValidator.validateNumber(price);
+        InputViewValidator.validatePriceRange(price);
     }
 }
