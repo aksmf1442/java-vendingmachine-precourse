@@ -18,6 +18,8 @@ public class InputViewValidator {
     }
 
     public static void validateItemSize(String[] item) {
-
+        if (item.length != 3) {
+            throw new IllegalArgumentException("[ERROR] 상품명, 가격, 수량 모두를 입력해줘야합니다.");
+        }
     }
 }
