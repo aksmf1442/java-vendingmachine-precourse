@@ -66,6 +66,7 @@ public class InputView {
     }
 
     public static String inputItem() {
+        System.out.println("구입할 상품명을 입력해주세요.");
         return Console.readLine();
     }
 }

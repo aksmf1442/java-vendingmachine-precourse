@@ -17,8 +17,15 @@ public class VendingMachine {
         this.userMoney = userMoney;
     }
 
-    public void buyItem(String item) {
-        validateItem(items.get(item));
+    public void buyItem(String key) {
+        Item item = items.get(key);
+        validateItem(item);
+
+        reduceUserMoney(item.getPrice());
+    }
+
+    private void reduceUserMoney(int price) {
+        userMoney -= price;
     }
 
     private void validateItem(Item item) {
@@ -29,5 +36,9 @@ public class VendingMachine {
         if (item.getAmount() == 0) {
             throw new NotEnoughItemAmountException();
         }
+    }
+
+    public int getUserMoney() {
+        return userMoney;
     }
 }
