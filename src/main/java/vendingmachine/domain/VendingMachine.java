@@ -14,5 +14,4 @@ public class VendingMachine {
         this.items = items;
         this.userMoney = userMoney;
     }
-
 }

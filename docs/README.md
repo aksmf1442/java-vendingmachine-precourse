@@ -26,7 +26,7 @@
   - [x] 투입한 금액이 숫자가 아니라면 IllegalException 발생
   - [x] 투입한 금액이 100원 이상이 아니라면 IllegalException 발생
   - [x] 투입한 금액이 10으로 나누어 떨어지지 않는다면 IllegalException 발생
-- [ ] 구매할 상품명을 입력 받는 기능
+- [x] 구매할 상품명을 입력 받는 기능
   - [ ] 해당 상품이 없을 경우 NotFoundItemException 발생
   - [ ] 해당 상품의 수량이 없을 경우 NotEnoughItemQuantityException 발생
 - [ ] 상품을 구매할 때마다 투입한 남은 금액을 줄어들게 하는 기능

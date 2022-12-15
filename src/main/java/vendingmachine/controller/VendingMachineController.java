@@ -6,6 +6,7 @@ import vendingmachine.domain.CoinMaker;
 import vendingmachine.domain.Item;
 import vendingmachine.domain.VendingMachine;
 import vendingmachine.view.InputView;
+import vendingmachine.view.InputViewValidator;
 import vendingmachine.view.OutputView;
 
 public class VendingMachineController {
@@ -16,9 +17,14 @@ public class VendingMachineController {
         int userMoney = createUserMoney();
 
         VendingMachine vendingMachine = new VendingMachine(coins, items, userMoney);
+        buyItems(vendingMachine);
 
+    }
 
-
+    private void buyItems(VendingMachine vendingMachine) {
+        while (true) {
+            String item = InputView.inputItem();
+        }
     }
 
     private int createUserMoney() {

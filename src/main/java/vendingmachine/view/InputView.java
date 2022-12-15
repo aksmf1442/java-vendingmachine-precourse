@@ -64,4 +64,8 @@ public class InputView {
         InputViewValidator.validateDivisibleBy10(money);
         return Integer.parseInt(money);
     }
+
+    public static String inputItem() {
+        return Console.readLine();
+    }
 }
