@@ -1,6 +1,7 @@
 package vendingmachine.domain;
 
 import java.util.Map;
+import vendingmachine.exception.NotFoundItemException;
 
 public class VendingMachine {
 
@@ -13,5 +14,15 @@ public class VendingMachine {
         this.coins = coins;
         this.items = items;
         this.userMoney = userMoney;
+    }
+
+    public void buyItem(String item) {
+        validateItem(items.get(item));
+    }
+
+    private void validateItem(Item item) {
+        if (item == null) {
+            throw new NotFoundItemException();
+        }
     }
 }
