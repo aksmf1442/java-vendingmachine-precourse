@@ -7,7 +7,7 @@ public class InputViewValidator {
     public static void validateNumber(String money) {
         String expression = "^[0-9]+$";
         if (!money.matches(expression)) {
-            throw new IllegalArgumentException("[ERROR] 입려 받은 금액이 숫자여야 합니다.");
+            throw new IllegalArgumentException("[ERROR] 입력 받은 금액이 숫자여야 합니다.");
         }
     }
 
