@@ -42,7 +42,12 @@ public class InputView {
         String name = item[0];
         String price = item[1];
         String amount = item[2];
+        validatePrice(price);
+    }
+
+    private static void validatePrice(String price) {
         InputViewValidator.validateNumber(price);
         InputViewValidator.validatePriceRange(price);
+        InputViewValidator.validateDivisibleBy10(price);
     }
 }

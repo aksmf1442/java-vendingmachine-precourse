@@ -25,6 +25,8 @@ public class InputViewValidator {
     }
 
     public static void validatePriceRange(String price) {
-
+        if (Integer.parseInt(price) < MIN_PRICE) {
+            throw new IllegalArgumentException("[ERROR] 상품 가격은 100원 이상이어야 합니다.");
+        }
     }
 }
