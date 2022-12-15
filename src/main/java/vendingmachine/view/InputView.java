@@ -60,6 +60,7 @@ public class InputView {
         System.out.println("투입 금액을 입력해 주세요.");
         String money = Console.readLine();
         InputViewValidator.validateNumber(money);
+        InputViewValidator.validatePriceRange(money);
         return Integer.parseInt(money);
     }
 }
