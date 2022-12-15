@@ -1,5 +1,7 @@
 package vendingmachine.domain;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import vendingmachine.exception.NotEnoughItemAmountException;
 import vendingmachine.exception.NotEnoughMoneyException;
@@ -26,7 +28,7 @@ public class VendingMachine {
     }
 
     private void reduceUserMoney(int price) {
-        if (userMoney >= price) {
+        if (userMoney < price) {
             throw new NotEnoughMoneyException();
         }
         userMoney -= price;
@@ -68,4 +70,19 @@ public class VendingMachine {
         return userMoney;
     }
 
+    public Map<Coin, Integer> returnCoins() {
+        Map<Coin, Integer> returnCoins = new HashMap<>();
+        for (Coin coin : Coin.values()) {
+            Integer coinCount = coins.getOrDefault(coin, 0);
+            if (coinCount * coin.getAmount() <= userMoney) {
+                userMoney -= coinCount * coin.getAmount();
+                returnCoins.put(coin, coinCount);
+                continue;
+            }
+            int minusCoin = userMoney / coin.getAmount();
+            userMoney -= minusCoin * coinCount;
+            returnCoins.put(coin, minusCoin);
+        }
+        return returnCoins;
+    }
 }

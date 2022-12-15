@@ -29,10 +29,16 @@ public class VendingMachineController {
                 String item = InputView.inputItem();
                 vendingMachine.buyItem(item);
             }
+            endGame(vendingMachine);
         } catch (NotFoundItemException | NotEnoughItemAmountException | NotEnoughMoneyException exception) {
             System.out.println(exception.getMessage());
             buyItems(vendingMachine);
         }
+    }
+
+    private void endGame(VendingMachine vendingMachine) {
+        Map<Coin, Integer> coins = vendingMachine.returnCoins();
+        System.out.println(coins);
     }
 
     private boolean isFinished(VendingMachine vendingMachine) {
