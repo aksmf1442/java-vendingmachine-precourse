@@ -15,6 +15,18 @@ public class OutputView {
     }
 
     public static void printUserMoney(int userMoney) {
-        System.out.println("\n투입 금액: " + userMoney);
+        System.out.println("\n투입 금액: " + userMoney + "원");
+    }
+
+    public static void printResult(Map<Coin, Integer> coins, int userMoney) {
+        printUserMoney(userMoney);
+        System.out.println("잔돈");
+
+        for (Coin coin : Coin.values()) {
+            int coinCount = coins.get(coin);
+            if (coinCount != 0) {
+                System.out.println(coin.getAmount() + "원 - " + coinCount + "개");
+            }
+        }
     }
 }

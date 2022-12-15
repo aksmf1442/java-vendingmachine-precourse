@@ -37,8 +37,9 @@ public class VendingMachineController {
     }
 
     private void endGame(VendingMachine vendingMachine) {
+        int userMoney = vendingMachine.getUserMoney();
         Map<Coin, Integer> coins = vendingMachine.returnCoins();
-        System.out.println(coins);
+        OutputView.printResult(coins, userMoney);
     }
 
     private boolean isFinished(VendingMachine vendingMachine) {
