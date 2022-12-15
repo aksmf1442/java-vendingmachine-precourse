@@ -13,10 +13,22 @@ public class VendingMachineController {
     public void run() {
         Map<Coin, Integer> coins = createCoins();
         Map<String, Item> items = createItems();
-        VendingMachine vendingMachine = new VendingMachine(coins, items);
+        int userMoney = createUserMoney();
 
-        int moneyOfUser = InputView.inputMoneyOfUser();
+        VendingMachine vendingMachine = new VendingMachine(coins, items, userMoney);
 
+
+
+    }
+
+    private int createUserMoney() {
+        try {
+            int money = InputView.inputMoneyOfUser();
+            return money;
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
+        }
+        return createUserMoney();
     }
 
     private Map<Coin, Integer> createCoins() {
