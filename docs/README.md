@@ -28,7 +28,7 @@
   - [x] 투입한 금액이 10으로 나누어 떨어지지 않는다면 IllegalException 발생
 - [x] 구매할 상품명을 입력 받는 기능
   - [x] 자판기의 상품 목록에 해당 상품이 없을 경우 NotFoundItemException 발생
-  - [ ] 자판기의 상품 목록에 해당 상품의 수량이 없을 경우 NotEnoughItemQuantityException 발생
+  - [x] 자판기의 상품 목록에 해당 상품의 수량이 없을 경우 NotEnoughItemAmountException 발생
 - [ ] 상품을 구매할 때마다 투입한 남은 금액을 줄어들게 하는 기능
 - [ ] 남은 금액이 상품의 최저 가격보다 작은지 확인하는 기능
 - [ ] 자판기가 가지고 있는 상품의 수량이 1개도 없는지 확인하는 기능

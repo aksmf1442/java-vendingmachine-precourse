@@ -1,6 +1,7 @@
 package vendingmachine.domain;
 
 import java.util.Map;
+import vendingmachine.exception.NotEnoughItemAmountException;
 import vendingmachine.exception.NotFoundItemException;
 
 public class VendingMachine {
@@ -23,6 +24,10 @@ public class VendingMachine {
     private void validateItem(Item item) {
         if (item == null) {
             throw new NotFoundItemException();
+        }
+
+        if (item.getAmount() == 0) {
+            throw new NotEnoughItemAmountException();
         }
     }
 }

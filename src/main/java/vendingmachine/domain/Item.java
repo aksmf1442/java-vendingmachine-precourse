@@ -11,4 +11,8 @@ public class Item {
         this.price = price;
         this.amount = amount;
     }
+
+    public int getAmount() {
+        return amount;
+    }
 }
