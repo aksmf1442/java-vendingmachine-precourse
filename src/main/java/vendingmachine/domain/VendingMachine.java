@@ -1,7 +1,6 @@
 package vendingmachine.domain;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import vendingmachine.exception.NotEnoughItemAmountException;
 import vendingmachine.exception.NotEnoughMoneyException;

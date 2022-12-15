@@ -14,7 +14,7 @@ class CoinMakerTest {
 
         Map<Coin, Integer> coins = coinMaker.createCoins(money);
         int result = 0;
-        for (Coin coin: coins.keySet()) {
+        for (Coin coin : coins.keySet()) {
             result += coins.get(coin) * coin.getAmount();
         }
 
