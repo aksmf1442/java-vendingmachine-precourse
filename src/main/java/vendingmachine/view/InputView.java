@@ -28,11 +28,20 @@ public class InputView {
         Map<String, Item> items = new HashMap<>();
         for (String item : originItems) {
             String[] splitItem = item.split(",");
+            validateItem(splitItem);
             String name = splitItem[0];
             int price = Integer.parseInt(splitItem[1]);
             int amount = Integer.parseInt(splitItem[2]);
             items.put(name, new Item(name, price, amount));
         }
         return items;
+    }
+
+    private static void validateItem(String[] item) {
+        InputViewValidator.validateItemSize(item);
+        String name = item[0];
+        String price = item[1];
+        String amount = item[2];
+        InputViewValidator.validateNumber(price);
     }
 }

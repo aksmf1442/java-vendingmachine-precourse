@@ -19,4 +19,11 @@ class InputViewValidatorTest {
         assertThatThrownBy(() -> InputViewValidator.validateDivisibleBy10(money))
             .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void 상품의_사이즈가_3이_아니라면_IllegalArgumentException_발생() {
+        String[] item = {"콜라", "1000"};
+        assertThatThrownBy(() -> InputViewValidator.validateItemSize(item)).isInstanceOf(
+            IllegalArgumentException.class);
+    }
 }
