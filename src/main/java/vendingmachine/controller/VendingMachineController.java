@@ -15,7 +15,6 @@ public class VendingMachineController {
         Map<String, Item> items = InputView.inputItems();
         VendingMachine vendingMachine = new VendingMachine(coins, items);
 
-        
     }
 
     private Map<Coin, Integer> createCoins() {

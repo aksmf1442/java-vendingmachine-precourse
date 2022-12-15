@@ -31,6 +31,8 @@ public class InputViewValidator {
     }
 
     public static void validateAmountRange(String amount) {
-
+        if (Integer.parseInt(amount) < 1) {
+            throw new IllegalArgumentException("[ERROR] 상품 수량은 하나 이상이어야 합니다.");
+        }
     }
 }
