@@ -42,7 +42,25 @@ public class VendingMachine {
         }
     }
 
+    public boolean end() {
+        if (checkItemOfMinPrice()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean checkItemOfMinPrice() {
+        for (Item item : items.values()) {
+            if (item.getPrice() <= userMoney) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public int getUserMoney() {
         return userMoney;
     }
+
 }

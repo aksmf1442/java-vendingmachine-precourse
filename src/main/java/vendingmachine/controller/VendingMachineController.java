@@ -20,12 +20,11 @@ public class VendingMachineController {
 
         VendingMachine vendingMachine = new VendingMachine(coins, items, userMoney);
         buyItems(vendingMachine);
-
     }
 
     private void buyItems(VendingMachine vendingMachine) {
         try {
-            while (true) {
+            while (!endGame(vendingMachine)) {
                 OutputView.printUserMoney(vendingMachine.getUserMoney());
                 String item = InputView.inputItem();
                 vendingMachine.buyItem(item);
@@ -34,6 +33,10 @@ public class VendingMachineController {
             System.out.println(exception.getMessage());
             buyItems(vendingMachine);
         }
+    }
+
+    private boolean endGame(VendingMachine vendingMachine) {
+        return vendingMachine.end();
     }
 
     private int createUserMoney() {
