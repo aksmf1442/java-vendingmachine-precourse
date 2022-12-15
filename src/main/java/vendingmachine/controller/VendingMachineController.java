@@ -6,6 +6,7 @@ import vendingmachine.domain.CoinMaker;
 import vendingmachine.domain.Item;
 import vendingmachine.domain.VendingMachine;
 import vendingmachine.exception.NotEnoughItemAmountException;
+import vendingmachine.exception.NotEnoughMoneyException;
 import vendingmachine.exception.NotFoundItemException;
 import vendingmachine.view.InputView;
 import vendingmachine.view.OutputView;
@@ -29,7 +30,7 @@ public class VendingMachineController {
                 String item = InputView.inputItem();
                 vendingMachine.buyItem(item);
             }
-        } catch (NotFoundItemException | NotEnoughItemAmountException exception) {
+        } catch (NotFoundItemException | NotEnoughItemAmountException | NotEnoughMoneyException exception) {
             System.out.println(exception.getMessage());
             buyItems(vendingMachine);
         }

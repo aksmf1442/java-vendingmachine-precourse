@@ -2,6 +2,7 @@ package vendingmachine.domain;
 
 import java.util.Map;
 import vendingmachine.exception.NotEnoughItemAmountException;
+import vendingmachine.exception.NotEnoughMoneyException;
 import vendingmachine.exception.NotFoundItemException;
 
 public class VendingMachine {
@@ -25,6 +26,9 @@ public class VendingMachine {
     }
 
     private void reduceUserMoney(int price) {
+        if (userMoney >= price) {
+            throw new NotEnoughMoneyException();
+        }
         userMoney -= price;
     }
 
