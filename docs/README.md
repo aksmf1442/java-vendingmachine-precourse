@@ -20,7 +20,7 @@
     - [x] 상품 가격이 숫자가 아니라면 IllegalException 발생 
     - [x] 상품 가격이 100원 이상이 아니라면 IllegalException 발생
     - [x] 상품 가격이 10으로 나누어 떨어지지 않는다면 IllegalException 발생
-    - [ ] 상품 수량이 숫자가 아니라면 IllegalException 발생
+    - [x] 상품 수량이 숫자가 아니라면 IllegalException 발생
     - [ ] 상품 수량이 1 이상의 숫자가 아니라면 IllegalException 발생
 - [ ] 사용자가 투입할 금액을 입력 받는 기능
   - [ ] 투입한 금액이 숫자가 아니라면 IllegalException 발생

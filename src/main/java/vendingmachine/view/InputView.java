@@ -39,15 +39,19 @@ public class InputView {
 
     private static void validateItem(String[] item) {
         InputViewValidator.validateItemSize(item);
-        String name = item[0];
         String price = item[1];
         String amount = item[2];
         validatePrice(price);
+        validateAmount(amount);
     }
 
     private static void validatePrice(String price) {
         InputViewValidator.validateNumber(price);
         InputViewValidator.validatePriceRange(price);
         InputViewValidator.validateDivisibleBy10(price);
+    }
+
+    private static void validateAmount(String amount) {
+        InputViewValidator.validateNumber(amount);
     }
 }
