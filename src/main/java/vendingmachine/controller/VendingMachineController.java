@@ -24,7 +24,7 @@ public class VendingMachineController {
 
     private void buyItems(VendingMachine vendingMachine) {
         try {
-            while (!endGame(vendingMachine)) {
+            while (!isFinished(vendingMachine)) {
                 OutputView.printUserMoney(vendingMachine.getUserMoney());
                 String item = InputView.inputItem();
                 vendingMachine.buyItem(item);
@@ -35,7 +35,7 @@ public class VendingMachineController {
         }
     }
 
-    private boolean endGame(VendingMachine vendingMachine) {
+    private boolean isFinished(VendingMachine vendingMachine) {
         return vendingMachine.end();
     }
 

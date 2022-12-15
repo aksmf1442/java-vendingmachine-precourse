@@ -43,10 +43,15 @@ public class VendingMachine {
     }
 
     public boolean end() {
-        if (checkItemOfMinPrice()) {
-            return true;
-        }
+        return checkItemOfMinPrice() | checkItemsAmount();
+    }
 
+    private boolean checkItemsAmount() {
+        for (Item item : items.values()) {
+            if (item.getAmount() > 0) {
+                return false;
+            }
+        }
         return false;
     }
 
