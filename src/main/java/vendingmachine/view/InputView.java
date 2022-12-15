@@ -53,5 +53,6 @@ public class InputView {
 
     private static void validateAmount(String amount) {
         InputViewValidator.validateNumber(amount);
+        InputViewValidator.validateAmountRange(amount);
     }
 }

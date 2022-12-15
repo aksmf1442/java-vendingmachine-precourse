@@ -33,4 +33,11 @@ class InputViewValidatorTest {
         assertThatThrownBy(() -> InputViewValidator.validatePriceRange(price)).isInstanceOf(
             IllegalArgumentException.class);
     }
+
+    @Test
+    void 상품_수량이_1개_이상이_아니라면_IllegalArgumentException_발생() {
+        String amount = "0";
+        assertThatThrownBy(() -> InputViewValidator.validateAmountRange(amount)).isInstanceOf(
+            IllegalArgumentException.class);
+    }
 }
